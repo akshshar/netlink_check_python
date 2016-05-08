@@ -2,8 +2,7 @@ import os
 import socket
 import struct
 
-# These constants map to constants in the Linux kernel. This is a crappy
-# way to get at them, but it'll do for now.
+# MAP to RTMGRP constants map 
 RTMGRP_LINK = 1
 
 RTM_NEWLINK = 16
@@ -12,8 +11,9 @@ RTM_DELLINK = 17
 IFLA_IFNAME = 3
 IFF_RUNNING = 0x40
 IFF_LOWER_UP = 0x10000
-# Create the netlink socket and bind to RTMGRP_LINK,
+# Create netlink socket
 s = socket.socket(socket.AF_NETLINK, socket.SOCK_RAW, socket.NETLINK_ROUTE)
+#bind to RTMGRP_LINK
 s.bind((os.getpid(), RTMGRP_LINK))
 
 while True:
