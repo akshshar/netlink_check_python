@@ -2,8 +2,7 @@ import os
 import socket
 import struct
 
-# These constants map to constants in the Linux kernel. This is a crappy
-# way to get at them, but it'll do for now.
+# Hard coded values to map to the linux kernel constants 
 RTMGRP_LINK = 1
 
 RTM_NEWLINK = 16
